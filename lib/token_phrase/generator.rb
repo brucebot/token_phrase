@@ -4,17 +4,18 @@ module TokenPhrase
     #attr_accessor :separator, :dictionary, :order
     attr_accessor :dictionary
 
-    #def initialize separator = "-", options = {}
+    def initialize
     #  separator, options = "-", separator if separator.is_a? Hash
     #  options[:numbers] = [] if options[:numbers] == false
 
       #@separator = separator
     #  @dictionary = TokenPhrase.dictionary.merge options
-      #@order = dictionary.keys
-      #end
+      @order = dictionary.keys
+    end
 
     def generate
-      lists.map(&:sample).join(separator).chomp(separator).gsub(/-/, separator)
+      #lists.map(&:sample).join(separator).chomp(separator).gsub(/-/, separator)
+      lists.map(&:sample)
     end
 
     def permutations
