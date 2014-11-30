@@ -1,20 +1,14 @@
 require 'backports/1.9.1/array/sample'
 module TokenPhrase
   class Generator
-    #attr_accessor :separator, :dictionary, :order
-    attr_accessor :dictionary
+    attr_accessor :dictionary,:order
 
     def initialize
-    #  separator, options = "-", separator if separator.is_a? Hash
-    #  options[:numbers] = [] if options[:numbers] == false
-
-      #@separator = separator
-    #  @dictionary = TokenPhrase.dictionary.merge options
+      @dictionary = TokenPhrase.dictionary
       @order = dictionary.keys
     end
 
     def generate
-      #lists.map(&:sample).join(separator).chomp(separator).gsub(/-/, separator)
       lists.map(&:sample)
     end
 
